@@ -6,8 +6,17 @@ import heart from "../../assets/images/heart.png";
 import shopping_bag from "../../assets/images/shopping-bag.png";
 import profile from "../../assets/images/profile.png";
 import { FiMenu } from "react-icons/fi";
+import { useState } from "react";
 
 const Header = () => {
+  const [isMenu, setIsMenu] = useState(false);
+
+  const menuHandler = () => {
+    setIsMenu((prev) => {
+      return !prev;
+    });
+  };
+
   return (
     <nav>
       <div className={styles.above_nav}>
@@ -26,9 +35,20 @@ const Header = () => {
       </div>
       <div className={styles.middle_nav}>
         <div className={styles.left_nav}>
-          <FiMenu className={styles.menu} />
+          <FiMenu onClick={menuHandler} className={styles.menu} />
           <img src={logo} alt="error" />
         </div>
+        {isMenu && (
+          <div className={styles.menu_show}>
+            <ul>
+              <li>SHOP</li>
+              <li>SKILLS</li>
+              <li>STORIES</li>
+              <li>ABOUT</li>
+              <li>CONTACT US</li>
+            </ul>
+          </div>
+        )}
         <div className={styles.mid_nav}>LOGO</div>
         <div className={styles.right_nav}>
           <ul>

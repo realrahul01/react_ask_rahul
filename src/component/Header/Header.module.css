@@ -40,6 +40,7 @@ nav{
     padding: 2rem 3rem;
     /* border: 1px solid blue; */
     height: 40px;
+    position: relative;
 }
 
 .right_nav{
@@ -92,7 +93,23 @@ nav{
 }
 
 
+.menu_show{
+    background-color: #2c3e50;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 60px;
+    height: 100vh;
+    z-index: 1;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 30px;
+    color: #fff;
+}
 
+.menu_show ul li{
+    padding: 30px;
+}
 
 
 
@@ -105,6 +122,7 @@ nav{
     .val,.d1, .language, .below_nav ul{
         display: none !important;
     }
+    
     .mid_nav{
         padding-left: 1rem;
         font-size: 30px;
@@ -127,5 +145,11 @@ nav{
     .left_nav img{
         width: 25px;
         height: 25px;
+    }
+}
+
+@media only screen and (min-width:750px){
+    .menu_show{
+        display: none;
     }
 }
