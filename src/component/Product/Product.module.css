@@ -189,6 +189,7 @@
 
 .item_list{
     width: 19rem;
+    border: 1px solid blue;
 }
 
 .list_img{
@@ -225,14 +226,14 @@
     position: absolute;
     top: 40px;
     right: 10px;
-    width: 240px;
-    height: 300px;
+    width: 200px;
+    height: 240px;
     background-color: #fff;
+    text-align: right;
+    font-size: 14px;
+    cursor: pointer;
 }
-.toogle_div p{
-    margin-top: 20px;
-    margin-left: 50px;
-}
+
 
 
 
@@ -244,7 +245,7 @@
     .left_sidebar{
         position: absolute;
         z-index: 2;
-        background-color: #E5E5E5;;;
+        background-color: #fff;
         width: 250px;
     }
     .product_items{
@@ -266,8 +267,8 @@
         width: 40%;
     }
     .list_img{
-        width: 150px;
-        height: 200px;
+        width: 200px;
+        height: 300px;
     }
     .right_head, .res_div{
         font-size: 2.5vw;
@@ -307,5 +308,12 @@
 @media only screen and (max-width:400px){
     .product_name{
         font-size: 6vw;
+    }
+}
+
+@media only screen and (max-width:522px){
+    .list_img{
+        width: 120px;
+        height: 180px;
     }
 }

@@ -55,6 +55,24 @@ const Product = () => {
     });
   };
 
+  const [sortOptions, setSortOptions] = useState([
+    { label: "RECOMMENDED", selected: true },
+    { label: "POPULAR", selected: false },
+    { label: "NEWEST FIRST", selected: false },
+    { label: "PRICE : HIGH TO LOW", selected: false },
+    { label: "PRICE : LOW TO HIGH", selected: false },
+  ]);
+
+  const toggleSortOption = (index) => {
+    const updatedOptions = sortOptions.map((option, i) => {
+      return {
+        ...option,
+        selected: i === index,
+      };
+    });
+    setSortOptions(updatedOptions);
+  };
+
   return (
     <main>
       <div className={styles.above_main}>
@@ -91,17 +109,21 @@ const Product = () => {
           </div>
           <hr className={styles.line} />
           <div className={styles.right_head}>
-            <p htmlFor="">RECOMMENDED</p>
+            <p htmlFor="">
+              {sortOptions.find((option) => option.selected)?.label}
+            </p>
             <img src={arrowDown} alt="error" onClick={divHandler} />
             {isDiv && (
               <div className={styles.toogle_div}>
-                <p>
-                  <FaCheck /> RECOMMENDED
-                </p>
-                <p>POPULARA</p>
-                <p>NEWEST FIRST</p>
-                <p>PRICE : HIGHT TO LOW</p>
-                <p>PRICE : LOW TO HIGH</p>
+                {sortOptions.map((option, index) => (
+                  <p
+                    key={index}
+                    className={option.selected ? styles.selected : ""}
+                    onClick={() => toggleSortOption(index)}
+                  >
+                    {option.selected && <FaCheck />} {option.label}
+                  </p>
+                ))}
               </div>
             )}
           </div>
