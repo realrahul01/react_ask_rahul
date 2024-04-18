@@ -241,6 +241,17 @@
 }
 
 
+.perm{
+    text-align: center;
+    transition: transform 0.4s;
+}
+
+.rotate{
+    text-align: center;
+    transform: rotate(180deg);
+    transition: transform 0.4s;
+}
+
 
 
 

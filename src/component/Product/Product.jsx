@@ -73,6 +73,14 @@ const Product = () => {
     setSortOptions(updatedOptions);
   };
 
+  const [isRotate, setIsRotate] = useState(false);
+
+  const handleRotate = () => {
+    setIsRotate((prev) => {
+      return !prev;
+    });
+  };
+
   return (
     <main>
       <div className={styles.above_main}>
@@ -192,7 +200,12 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <div className={isRotate ? styles.rotate : styles.perm}>
+        <img src={arrowDown} alt="error" onClick={handleRotate} />
+      </div>
     </main>
+
+    // this is the end it is developed by rahul
   );
 };
 
